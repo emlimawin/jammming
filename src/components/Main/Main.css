@@ -1,0 +1,11 @@
+.container3 {
+    padding-block: 4em;
+    padding-inline: 2em;
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.8fr;
+    grid-template-rows: 1fr 4fr;
+    background-color: black;
+    gap: 2.5em;
+}

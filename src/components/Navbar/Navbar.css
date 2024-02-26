@@ -1,0 +1,45 @@
+.container2 {
+    padding: 1.5em 1.5em 2em 2em;
+    border-bottom: 1px solid var(--mint);
+    background-color: black;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+.ja{
+    font-family: var(--heading-font);
+    color: var(--mint);
+    font-size: 4.5em;
+}
+
+.mmm {
+    color: var(--neon);
+}
+
+.ing {
+    color: var(--jade);
+}
+
+ul {
+    display: flex;
+}
+
+li > a {
+    color: var(--jade);
+    font-family: var(--heading-font);
+    font-size: 2em;
+    font-weight: 200;
+    padding-right: 1em;
+}
+
+li > a:hover {
+    color: var(--neon)
+}
+
+button {
+    background-color: var(--button);
+}

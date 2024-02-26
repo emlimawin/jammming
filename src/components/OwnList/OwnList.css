@@ -1,0 +1,18 @@
+.container5 {
+    grid-column: 3;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px solid var(--mint);
+    background-color: black;
+    height: 100%;
+    border-radius: 1em;
+}
+
+h2 {
+    color: var(--mint);
+    font-family: var(--heading-font);
+    font-size: 2em;
+}

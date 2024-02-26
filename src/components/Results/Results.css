@@ -1,0 +1,12 @@
+.container6 {
+    grid-column: 2;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px solid var(--mint);
+    background-color: black;
+    height: 100%;
+    border-radius: 1em;
+}

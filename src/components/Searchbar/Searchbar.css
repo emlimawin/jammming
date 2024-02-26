@@ -1,0 +1,90 @@
+.container1 {
+    padding-inline: 1.5em;
+    grid-column: 1;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: black;
+}
+
+.sowhat {
+    font-size: 3em;
+    line-height: 1.3em;
+}
+
+.musicLover{
+    color: var(--jade);
+}
+
+p {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    color: var(--mint);
+    font-family: var(--paragraph-font);
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.btn-group {
+    padding-top: 3.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.searchInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    height: 3em;
+    padding:1rem;
+    border-radius: 5em;
+    border: none;
+    background-color: var(--mint);
+}
+
+input {
+    display: block;
+    width: 90%;
+    height: 3em;
+    padding:1rem;
+    border-radius: 5em;
+    border: none;
+    background-color: var(--mint);
+    font-family: var(--paragraph-font);
+    font-size: 2em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.searchIcon {
+    display: block;
+    background-color: var(--mint);
+    color: black;
+    height: 1.7em;
+    padding: 0.2em;
+  }
+
+#searchChoice {
+    background-color: var(--jade);
+    color: black;
+    padding: 0.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+#searchChoice:hover, #searchChoice:focus {
+    background-color: var(--neon);
+}
+
