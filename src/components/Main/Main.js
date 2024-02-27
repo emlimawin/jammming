@@ -1,7 +1,7 @@
 import React from "react";
 import Results from '../Results/Results';
 import OwnList from '../OwnList/OwnList';
-import Searchbar from "../Searchbar/Searchbar";
+import Searchbar from '../Searchbar/Searchbar';
 
 import styles from './Main.css'
 

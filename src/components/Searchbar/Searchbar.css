@@ -1,15 +1,21 @@
 .container1 {
-    padding-inline: 1.5em;
+    padding-right: 3em;
     grid-column: 1;
     grid-row: span 2;
+
+}
+
+.menuWrapper{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background-color: black;
+    padding-top: 8em;
 }
 
 .sowhat {
+    color: var(--mint);
+    font-family: var(--heading-font);
     font-size: 3em;
     line-height: 1.3em;
 }
@@ -27,14 +33,6 @@ p {
     line-height: 1.5em;
 }
 
-.btn-group {
-    padding-top: 3.5em;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
 .searchInput {
     position: relative;
     display: flex;
@@ -45,15 +43,17 @@ p {
     padding:1rem;
     border-radius: 5em;
     border: none;
+    font-family: var(--paragraph-font);
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2em;
+    font-weight: 600;
     background-color: var(--mint);
 }
 
 input {
     display: block;
     width: 90%;
-    height: 3em;
-    padding:1rem;
-    border-radius: 5em;
+    
     border: none;
     background-color: var(--mint);
     font-family: var(--paragraph-font);
@@ -69,8 +69,16 @@ input:focus {
     background-color: var(--mint);
     color: black;
     height: 1.7em;
-    padding: 0.2em;
+    padding: 0.2em 0.2em 0.2em 0.6em;
   }
+
+.btn-group {
+    padding-top: 3.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 #searchChoice {
     background-color: var(--jade);

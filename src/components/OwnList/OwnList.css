@@ -1,9 +1,9 @@
 .container5 {
     grid-column: 3;
     grid-row: span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 5.3em 1fr 8em;
     
     border: 1px solid var(--mint);
     background-color: black;
@@ -11,8 +11,94 @@
     border-radius: 1em;
 }
 
-h2 {
+.lists-Header {
+    grid-row: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--mint);
+}
+
+.lists-h2 {
     color: var(--mint);
     font-family: var(--heading-font);
     font-size: 2em;
+    align-self: center;
+}
+
+.listContainer {
+    grid-row: 2;
+    width: 100%;
+    padding-inline: 1em;
+    overflow: hidden;
+}
+
+.removeItemIcon {
+    color: var(--neon);
+    font-size: 1.7em;
+    transition: 0.2s ease-in-out;
+}
+
+.removeItemIcon:hover {
+    color: var(--jade);
+}
+
+.handleList {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 1.5em;
+    border-top: 1px solid var(--mint);
+}
+
+.clearList {
+    width: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.AddNewList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newListName {
+    width: 70%;
+    height: 2em;
+    padding-inline: 1em;
+    border-radius: 5em;
+
+    font-family: var(--paragraph-font);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+}
+
+.addToSFList, .clear {
+    background-color: var(--jade);
+    color: black;
+    height: 2em;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.addToSFList:hover {
+    background-color: var(--neon);
+}
+
+.clear {
+    background-color: var(--neon);
+}
+
+.clear:hover {
+    background-color: var(--jade);
 }
