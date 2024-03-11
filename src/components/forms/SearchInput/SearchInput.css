@@ -1,0 +1,31 @@
+.searchInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    height: 3em;
+    padding:1rem;
+    border-radius: 5em;
+    border: none;
+    font-family: var(--paragraph-font);
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: var(--mint);
+}
+
+input {
+    display: block;
+    width: 90%;
+    
+    border: none;
+    background-color: var(--mint);
+    font-family: var(--paragraph-font);
+    font-size: 2em;
+}
+
+input:focus {
+    outline: none;
+}
+

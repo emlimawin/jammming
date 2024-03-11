@@ -1,0 +1,7 @@
+.searchIcon {
+    display: block;
+    background-color: var(--mint);
+    color: black;
+    height: 1.7em;
+    padding: 0.2em 0.2em 0.2em 0.6em;
+  }

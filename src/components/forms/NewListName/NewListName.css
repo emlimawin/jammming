@@ -1,0 +1,10 @@
+.newListName {
+    width: 70%;
+    height: 2em;
+    padding-inline: 1em;
+    border-radius: 5em;
+
+    font-family: var(--paragraph-font);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,24 @@
+.handleList {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 1.5em;
+    border-top: 1px solid var(--mint);
+}
+
+.clearList {
+    width: 100%;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.AddNewList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
