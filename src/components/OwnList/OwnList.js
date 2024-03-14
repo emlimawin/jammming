@@ -1,25 +1,26 @@
-import React, {useState} from "react";
-import styles from './OwnList.css';
+import React from "react";
+import './OwnList.css';
 import HandleNewList from "../HandleNewList/HandleNewList";
-import ResultItem from "../ResultList/ResultItem";
+import OwnListItem from "../OwnListItem/OwnListItem";
 
-const OwnList = () => {
-    const [list, setList] = useState([]);
+const OwnList = ({ownList, deleteItem, removeAll}) => {
 
     return (
         <div className="container5">
             <div className="lists-Header">
                 <h2 className="lists-h2">Your List</h2>
+                <button className="expand"></button>
             </div>
             <ul className="listContainer">
-            {list.map((item) => (
-                    <ResultItem 
-                        key={item.id}
-                        item={item} 
-                    />
-                ))}   
+                {ownList.map((item) => (
+                        <OwnListItem
+                            key={item.id}
+                            item={item} 
+                            deleteItem={deleteItem}
+                        />
+                    ))}   
             </ul>
-            <HandleNewList />
+            <HandleNewList removeAll={removeAll}/>
         </div>
     )
 }

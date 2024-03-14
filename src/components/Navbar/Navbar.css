@@ -5,6 +5,7 @@
     grid-column: 2;
     grid-row: 1;
     display: flex;
+    align-content: center;
     align-items: center;
     justify-content: space-between;
     z-index: 99;
@@ -24,22 +25,20 @@
     color: var(--jade);
 }
 
-ul {
-    display: flex;
+.login {
+    background-color: var(--jade);
+    color: black;
+    padding: 0.5rem;
+    margin-right: 5rem;
+    margin-top: 1.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
 }
 
-li > a {
-    color: var(--jade);
-    font-family: var(--heading-font);
-    font-size: 2em;
-    font-weight: 200;
-    padding-right: 1em;
-}
-
-li > a:hover {
-    color: var(--neon)
-}
-
-button {
-    background-color: var(--button);
+.login:hover {
+    background-color: var(--neon);
 }

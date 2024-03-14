@@ -1,0 +1,17 @@
+.listWrapper {
+    grid-column: 2;
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+}
+
+@media only screen and (max-width: 1600px) {
+    .listWrapper {
+        grid-column: span 2;
+        grid-row: 2;
+        width: 90%;
+        justify-self: center;
+
+    }
+}

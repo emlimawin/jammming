@@ -1,22 +1,31 @@
 .container1 {
-    padding-right: 3em;
     grid-column: 1;
     grid-row: span 2;
-
+    width: 90%;
+    max-height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .menuWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 8em;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows:  1;
+    align-self: start;
+}
+
+.sowhatWrapper{
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
 }
 
 .sowhat {
+    width: 100%;
     color: var(--mint);
     font-family: var(--heading-font);
-    font-size: 3em;
+    font-size: clamp(1.5rem, 3vw, 3rem);
     line-height: 1.3em;
 }
 
@@ -29,7 +38,25 @@ p {
     padding-bottom: 2em;
     color: var(--mint);
     font-family: var(--paragraph-font);
-    font-size: 1.5em;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
     line-height: 1.5em;
 }
 
+@media only screen and (max-width: 1600px) {
+    .container1 {
+        grid-column: span 2;
+        grid-row: 1;
+        width: 90%;
+        justify-self: center;   
+    }
+
+    .menuWrapper{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.5em;
+        grid-row: 1;
+    }
+
+    .sowhatWrapper{
+        grid-column: 1;
+    }
+}

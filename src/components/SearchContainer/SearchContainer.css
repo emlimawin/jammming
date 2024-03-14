@@ -1,0 +1,15 @@
+.searchWrapper{
+    grid-column: 1;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1600px) {
+    .searchWrapper{
+        grid-column: 2;
+        align-items: center;
+        justify-content: center;
+    }
+}

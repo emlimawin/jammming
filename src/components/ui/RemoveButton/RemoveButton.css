@@ -1,6 +1,10 @@
 .removeItem {
     grid-column: 3;
     justify-self: end;
+    background-color: black;
+}
+
+.invisibleButton {
     display: none;
 }
 

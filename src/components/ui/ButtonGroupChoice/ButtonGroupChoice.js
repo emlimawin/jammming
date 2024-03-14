@@ -1,15 +1,17 @@
-import React,  {useState, useEffect} from "react";
-import styles from './ButtonGroupChoice.css';
+import React,  {useState} from "react";
+import './ButtonGroupChoice.css';
 
 const choices = ['Title', 'Author', 'Album', 'All'];
 
-function ChoiceGroup() {
+function ChoiceGroup({chooseCategory}) {
     const [active, setActive] = useState(choices[0]);
 
     return <div className="btn-group">
         {choices.map((choice, i) => (
             <button 
-                onClick={() => setActive(i)}
+                key={i}
+                onClick={() => {setActive(i); chooseCategory()}}
+                value={choice}
                 className={i === active ? 'focus' : 'nonfocus'}
                 >
                 {choice}

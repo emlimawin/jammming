@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './ClearButton.css';
 
-const ClearButton = () => {
-    return <button className="clear">Clear</button>
+const ClearButton = ({removeAll}) => {
+    return <button className="clear" onClick={removeAll}>Clear</button>
 }
 
 export default ClearButton;

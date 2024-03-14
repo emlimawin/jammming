@@ -1,12 +1,17 @@
 import React from "react";
-import styles from './SearchInput.css'
+import './SearchInput.css'
 import SearchGlass from "../../ui/SearchGlass/SearchGlass";
 
-const SearchInput = () => {
+const SearchInput = ({input, handleInputChange, settleInput}) => {
     return (
         <form className="searchInput">
-            <input type="search" required></input>
-            <SearchGlass />
+            <input 
+                type="search" 
+                value={input} 
+                onChange={handleInputChange} 
+                required>
+            </input >
+            <SearchGlass onCLick={settleInput} />
         </form>
     );
 }

@@ -1,8 +1,7 @@
 .container5 {
-    grid-column: 3;
-    grid-row: span 2;
+    grid-column: 2;
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
     grid-template-rows: 5.3em 1fr 8em;
     
     border: 1px solid var(--mint);
@@ -13,17 +12,31 @@
 
 .lists-Header {
     grid-row: 1;
+    width: 100%;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
+    position: relative;
     border-bottom: 1px solid var(--mint);
 }
 
 .lists-h2 {
+    grid-row: 1;
+    width: 50%;
     color: var(--mint);
     font-family: var(--heading-font);
-    font-size: 2em;
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-align: center;
+}
+
+.expand {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    right: 2em;
     align-self: center;
+    background-color: var(--mint);
+
 }
 
 .listContainer {
@@ -31,6 +44,10 @@
     width: 100%;
     padding-inline: 1em;
     overflow: hidden;
+}
+
+.listContainerHidden {
+    display: none;
 }
 
 .removeItemIcon {
@@ -43,3 +60,4 @@
 .removeItemIcon:hover {
     color: var(--jade);
 }
+

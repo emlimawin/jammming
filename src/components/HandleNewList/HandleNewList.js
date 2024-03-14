@@ -4,11 +4,11 @@ import ClearButton from "../ui/ClearButton/ClearButton";
 import NewListName from "../forms/NewListName/NewListName";
 import AddListButton from "../ui/AddListButton/AddListButton";
 
-const HandleNewList = () => {
+const HandleNewList = ({removeAll}) => {
     return (
         <div className="handleList">
             <div className="clearList">
-                <ClearButton />
+                <ClearButton removeAll={removeAll}/>
             </div>
             <div className="AddNewList">
                 <NewListName />
