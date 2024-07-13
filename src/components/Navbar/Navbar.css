@@ -1,0 +1,214 @@
+.container2 {
+    padding-left: 2em;
+    border-bottom: 1px solid var(--mint);
+    background-color: black;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+.ja{
+    font-family: var(--heading-font);
+    color: var(--mint);
+    font-size: 4.5em;
+}
+
+.mmm {
+    color: var(--neon);
+}
+
+.ing {
+    color: var(--jade);
+}
+
+.login {
+    background-color: var(--jade);
+    color: black;
+    padding: 0.5rem;
+    margin-right: 5rem;
+    margin-top: 1.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.login:hover {
+    background-color: var(--neon);
+}
+
+.logout {
+    background-color: var(--neon);
+    color: black;
+    padding: 0.5rem;
+    margin-right: 5rem;
+    margin-top: 1.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background-color: var(--jade);
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1520px) {
+    .container2 {
+        padding-inline: 2em;
+    }
+
+    .ja{
+        font-size: 2.3em;
+    }
+
+    .login {
+        padding: 0.45rem;
+        margin-top: 1rem;
+        margin-right: 0;
+        width: 5em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+
+    .logout {
+        padding: 0.45rem;
+        margin-top: 1rem;
+        margin-right: 0;
+        width: 5em;
+        border-radius: 3.8em;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1128px) {
+    .container2 {
+        padding-inline: 2.5em;
+    }
+
+    .login {
+        padding: 0.4rem;
+        margin-top: 1rem;
+        margin-right: 0;
+        width: 5em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+    
+    .logout {
+        padding: 0.4rem;
+        margin-top: 1rem;
+        margin-right: 0;
+        width: 5em;
+        border-radius: 3.8em;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 950px) {
+    .container2 {
+        padding-inline: 2em;
+    } 
+
+    .ja{
+        font-size: 2em;
+    }
+
+    .login {
+        padding: 0.25rem;
+        margin-top: 0.5rem;
+        width: 4.6em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+
+    .logout {
+        padding: 0.25rem;
+        margin-top: 0.5rem;
+        width: 4.6em;
+        border-radius: 4em;
+        font-size: 1em;
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: portrait) and (min-width: 901px) {
+    .container2 {
+        padding-inline: 2em;
+    }
+
+    .ja{
+        font-size: 3.5em;
+    }
+
+    .login {
+        margin-right: 0;
+    }
+   
+    .logout {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+    .container2 {
+        padding-inline: 2em;
+    }
+    
+    .ja{
+        font-size: 2.3em;
+    }
+
+    .login {
+        padding: 0.3rem;
+        margin-right: 0;
+        margin-top: 0.5rem;
+        width: 4.6em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+
+    .logout {
+        padding: 0.3rem;
+        margin-right: 0;
+        margin-top: 0.5rem;
+        width: 4.6em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 580px) {
+    .container2 {
+        padding-inline: 1em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 390px) {
+    .container2 {
+        padding-inline: 0.5em;
+    }
+
+    .ja{
+        font-size: 2.1em;
+    }
+
+    .login {
+        padding: 0.2rem;
+    }
+
+    .logout {
+        padding: 0.2rem;
+    }
+}

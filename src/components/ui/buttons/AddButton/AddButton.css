@@ -1,0 +1,21 @@
+.passItem {
+    grid-column: 3;
+    justify-self: end;
+    background-color: black;
+}
+
+.passItemIcon {
+    color: var(--jade);
+    font-size: 1.7em;
+    transition: 0.2s ease-in-out;
+}
+
+.passItemIcon:hover {
+    color: var(--neon);
+}
+
+.passItemIconClicked {
+    color: var(--neon);
+    font-size: 1.7em;
+    transition: 0.2s ease-in-out;
+}

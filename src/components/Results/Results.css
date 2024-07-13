@@ -1,0 +1,69 @@
+.container6 {
+    grid-column: 1;
+    overflow: hidden;
+}
+
+.resultsWrapper {
+    border-left: 1px solid var(--mint);
+    border-bottom: 1px solid var(--mint);
+    border-right: 1px solid var(--mint);
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    overflow: hidden;
+}
+
+.resultsWrapperHidden {
+    display: none;
+}
+
+.resultContainer {
+    height: 590px;
+    overflow-y: scroll;
+}
+
+.results {
+    width: 100%;
+    padding-inline: 1em;
+}
+
+.loaderRef {
+    background-color: none;
+}
+
+.noMoreTracks {
+    font-family: var(--heading-font);
+    color: var(--mint);
+    text-align: center;
+    padding-block: 2em;
+    font-size: 1.3em;
+}
+.nothingFound{
+    height: 100%;
+    font-family: var(--heading-font);
+    color: var(--mint);
+    text-align: center;
+    overflow: hidden;
+    padding-block: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1280px) and (max-height: 880px) { 
+    .resultContainer {
+        height: 500px;
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+    .resultContainer {
+        min-height: 200px;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+}

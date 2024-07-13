@@ -1,0 +1,6 @@
+.Listitems-Container {
+    border-top: 1px solid var(--mint);
+    border-bottom: 1px solid var(--mint);
+    height: 500px;
+    width: 100%;
+}

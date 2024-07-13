@@ -1,0 +1,35 @@
+.addToSFList {
+    grid-column: 4;
+    grid-row: 2;
+    background-color: var(--jade);
+    color: black;
+    height: 2em;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.addToSFList:hover {
+    background-color: var(--neon);
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1280px) {
+    .addToSFList {
+        grid-column: 3;
+        grid-row: 2;
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 900px) {
+    .addToSFList {
+        grid-column: 3;
+        grid-row: 2;
+    }
+}

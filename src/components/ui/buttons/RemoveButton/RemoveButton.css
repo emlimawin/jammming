@@ -1,0 +1,19 @@
+.removeItem {
+    grid-column: 3;
+    justify-self: end;
+    background-color: black;
+}
+
+.invisibleButton {
+    display: none;
+}
+
+.removeItemIcon {
+    color: var(--neon);
+    font-size: 1.7em;
+    transition: 0.2s ease-in-out;
+}
+
+.removeItemIcon:hover {
+    color: var(--jade);
+}

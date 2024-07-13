@@ -1,0 +1,140 @@
+.container1 {
+    grid-column: 1;
+    grid-row: span 2;
+    width: 90%;
+    max-height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.menuWrapper{
+    align-self: start;
+}
+
+.sowhatWrapper{
+    align-self: end;
+}
+
+.sowhat {
+    width: 100%;
+    color: var(--mint);
+    font-family: var(--heading-font);
+    font-size: clamp(1.7rem, 3.3vw, 3rem);
+    line-height: 1.3em;
+}
+
+.musicLover{
+    color: var(--jade);
+}
+
+p {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    color: var(--mint);
+    font-family: var(--paragraph-font);
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    line-height: 1.5em;
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1520px) {
+    .sowhat {
+        width: 100%;
+        color: var(--mint);
+        font-family: var(--heading-font);
+        font-size: clamp(1.3rem, 2.3vw, 2rem);
+        line-height: 1.3em;
+    }
+
+    p {
+        padding-top: 1em;
+        padding-bottom: 2em;
+        color: var(--mint);
+        font-family: var(--paragraph-font);
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        line-height: 1.5em;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1128px) {
+    .container1 {
+        grid-column: span 2;
+        grid-row: 1;
+        width: 80%;
+        justify-self: center;   
+    }
+
+    .sowhatWrapper{
+        text-align: center;
+        
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 950px) {
+    .container1 {
+        padding-bottom: 2em;  
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: portrait) and (min-width: 901px) {
+    .container1 {
+        width: 80%;
+        justify-self: center;
+        padding-bottom: 3em;   
+    }
+
+    .menuWrapper{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        column-gap: 0;
+        grid-row: 1;
+    }
+
+    .sowhat {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 1.5em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+    .container1 {
+        width: 80%;
+        justify-self: center;
+        padding-bottom: 3em;   
+    }
+
+    .menuWrapper{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        column-gap: 0;
+        grid-row: 1;
+    }
+
+    .sowhat {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 1.5em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 420px) {
+    .container1 {
+       width: 90%;  
+    }
+
+}

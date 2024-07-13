@@ -1,0 +1,36 @@
+.searchIcon {
+    display: block;
+    background-color: var(--mint);
+    color: black;
+    height: 1.7em;
+    padding: 0.2em 0.2em 0.2em 0.6em;
+  }
+
+  @media only screen and (max-width: 1600px) {
+    .searchIcon {
+        height: 1.4em;
+    }
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1520px) {
+  .searchIcon {
+    height: 1.2em;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1280px) {
+  .searchIcon {
+    height: 1.1em;
+  }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+/* XS */
+@media only screen and (orientation: portrait) and (max-width: 420px) {
+  .searchIcon {
+    height: 1em;
+}
+}

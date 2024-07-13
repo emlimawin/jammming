@@ -1,0 +1,44 @@
+.listWrapper {
+    grid-column: 2;
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+    height: 100%;
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1128px) {
+    .listWrapper {
+        grid-column: span 2;
+        grid-row: 2;
+        gap: 1.8em;
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: portrait) and (min-width: 901px) {
+    .listWrapper{
+        width: 80%;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+    .listWrapper {
+        width: 80%;
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-self: center;
+        gap: 1.5em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 600px) {
+    .listWrapper{
+        width: 100%;
+    }
+}

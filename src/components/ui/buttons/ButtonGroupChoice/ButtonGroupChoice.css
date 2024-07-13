@@ -1,0 +1,117 @@
+.btn-group {
+    padding-top: 3.5em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+    justify-content: left;
+}
+
+.searchChoice {
+    color: black;
+    padding: 0.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nonfocus:hover {
+    background-color: var(--neon);
+}
+
+.nonfocus {
+    background-color: var(--jade);
+    color: black;
+    padding: 0.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.focus {
+    background-color: var(--neon);
+    color: black;
+    padding: 0.5rem;
+    width: 5em;
+    border-radius: 4em;
+    font-family: var(--paragraph-font);
+    font-size: 1.3em;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+/*RESPONSIVE-Landscape---------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: landscape) and (max-width: 1520px) {
+    .btn-group {
+        padding-top: 2.5em;
+    }
+
+    .focus, .nonfocus {
+        width: 5em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1128px) {
+    .btn-group {
+        padding-top: 2.3em;
+        gap: 1em;
+        justify-content: center;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 950px) {
+    .nonfocus {
+        padding: 0.4rem;
+        width: 4.8em;
+    }
+    
+    .focus {
+        padding: 0.4rem;
+        width: 4.8em;
+    }
+}
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (orientation: portrait) and (min-width: 901px) {
+    .btn-group {
+        padding-top: 2.5em;
+        justify-content: center;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+    .btn-group {
+        padding-top: 2em;
+        justify-content: center;
+    }
+
+    .focus, .nonfocus {
+        width: 5em;
+        border-radius: 4em;
+        font-size: 1.1em;
+    }
+}
+
+/* XS */
+@media only screen and (orientation: portrait) and (max-width: 400px) {
+    .nonfocus {
+        padding: 0.3rem;
+        width: 4.8em;
+    }
+    
+    .focus {
+        padding: 0.3rem;
+        width: 4.8em;
+    }
+}
