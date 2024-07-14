@@ -16,7 +16,7 @@ import {
     loggedIn, 
     userToken, 
     userId
-} from './data/AuthContext2.js';
+} from './auth/AuthContext2.js';
 
 const App = () => {
    
@@ -34,6 +34,7 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [index, setIndex] = useState(0);
     const inputRef = useRef();
+    const newListNameRef = useRef();
     const loaderRef = useRef(null); //element used to check if User reached the end of Page...when last element in list becomes visible, the page nows that it has to load more Data
                                   //useRef does not rerender the page. it is here only helping to detect the changes
 
@@ -41,7 +42,7 @@ const App = () => {
     const handleSearch = () => {
         const term = inputRef.current.value;
         setSearchInput(term);
-        console.log('term: ' + term); // the value of the input field
+        //console.log('term: ' + term); // the value of the input field
       };
 
     //fired onClick by Choice-button-Group
@@ -124,7 +125,7 @@ const App = () => {
         
       };
 
-    console.log('index: ' + index) 
+    //console.log('index: ' + index) 
 
     useEffect(() => {
         const loaderElement = loaderRef.current;
@@ -139,7 +140,6 @@ const App = () => {
 
         observer.observe(loaderElement) // sets the elementRef initialValue(=> current) to the target of observation. (current is the only poroperty, that useRef has)
         
-        
         return () => {
             if(loaderElement){
                 observer.unobserve(loaderElement); //cleanup after fetching the data    
@@ -147,8 +147,8 @@ const App = () => {
         };
     }, [filteredData]);   
 
-    console.log('filteredData: ');
-    console.log(filteredData); 
+    //console.log('filteredData: ');
+    //console.log(filteredData); 
 
     //CREATE and pass PLAYLIST-----------------------------------------------------------------------------------------------------------------------
     
@@ -156,7 +156,8 @@ const App = () => {
     
     function getNewListName(e) { /* Gets the current userInput */
     //console.log(newListName);
-    setNewListName(e.target.value);
+    const term = newListNameRef.current.value
+    setNewListName(term);
     };
 
     const postParams = {
@@ -177,11 +178,6 @@ const App = () => {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + accessToken
         },
-        /*body: JSON.stringify({
-            uris: [
-                uri
-            ]
-        })*/
     };
 
     async function createPlaylist(uris) {

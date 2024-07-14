@@ -1,12 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import './AddButton.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
-const AddButton = ({passTrack, clicked}) => {
+const AddButton = ({
+    passTrack, 
+    track,
+    isItemSelected
+}) => {
     return (
-        <button className="passItem" onClick={passTrack}>
-            <FontAwesomeIcon icon={faCirclePlus} className={!clicked ? "passItemIcon" : "passItemIconClicked"}/>
+        <button className="passItem" onClick={() => passTrack(track.id)}>
+            <FontAwesomeIcon icon={faCirclePlus} className={!isItemSelected(track) ? "passItemIcon" : "passItemIconClicked"}/>
         </button>
     )
 }

@@ -13,10 +13,8 @@ const ListWrapper = ({
     getNewListName, 
     createPlaylist
 }) => {
-    //Upliftet State-functionalities that both (Results and OwnList) share
+    //Upliftet State-functionalities that both (Results and OwnList) share:
     const [ownList, setOwnList] = useState([]);
-    const [clicked, setClicked] = useState(false);
-    //const [choosenItems, setChoosenItems] = useState([])
 
     function passTrack (id) { 
         const trackToPass = filteredData.find(track => track.id === id); 
@@ -24,19 +22,11 @@ const ListWrapper = ({
             alert('item is already added');
             return;
         }
-        if (!clicked) {
-            setClicked(true);
-        }
-        //setChoosenItems([trackToPass, ...choosenItems]);
         setOwnList([trackToPass, ...ownList]); /*adds the removed item to the personal list of user*/
     };
-    console.log(clicked)
 
     function deleteTrack (id) { /*removes an item from the personal list of user*/
         const removeTrack = ownList.filter((track) => track.id !== id );
-        if (clicked) {
-            setClicked(false);
-        }
         setOwnList(removeTrack);
     };
 
@@ -44,6 +34,10 @@ const ListWrapper = ({
         const clearedList = [];
         setOwnList(clearedList);
     };
+
+    const isItemSelected = (item) => {
+        return ownList.includes(item);
+      };
 
     return (
         <div className="listWrapper">
@@ -54,7 +48,7 @@ const ListWrapper = ({
                 loggedIn={loggedIn}
                 hasMore={hasMore}
                 passTrack={passTrack} 
-                clicked={clicked}
+                isItemSelected={isItemSelected}
             />
             <OwnList 
                 ownList={ownList} 

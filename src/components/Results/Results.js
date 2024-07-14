@@ -11,7 +11,8 @@ const Results = ({
     loggedIn,
     firstFetch,
     passTrack, 
-    deleteTrack, 
+    deleteTrack,
+    isItemSelected
 }) => {
     const [menuOpen, setMenueOpen] = useState(true);
     
@@ -39,6 +40,7 @@ const Results = ({
                                     track={track} 
                                     passTrack={passTrack}
                                     deleteTrack={deleteTrack}
+                                    isItemSelected={isItemSelected}
                                 />
                                 {index === filteredData.length - 1 ? (
                                 <div ref={loaderRef} className="loaderRef" />
