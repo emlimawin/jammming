@@ -1,12 +1,12 @@
-## Jammming - an App for filtering Spotify, creating and adding new lists to own account
+# Jammming - an App for filtering Spotify, creating and adding new lists to own account
 
-This App was created within the scope of the codecademy-task **Create a Playlist App With the Spotify API**.
+This App was created within the scope of the codecademy-task <span style="color:green">**Create a Playlist App With the Spotify API**</span>.
 
-# Description:
+## Description:
 
 In this project, you will build a React web application called Jammming. You will use your knowledge of React components, passing state, and requests with the Spotify API to build a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.
 
-# Project Requirements:
+## Project Requirements:
 
 * Build a web app using React
 * Version control your application with Git and host the repository on GitHub
@@ -18,16 +18,16 @@ In this project, you will build a React web application called Jammming. You wil
     -Features
     -Future work
 
-# Prerequisites:
+## Prerequisites:
 
-    HTML
-    CSS
-    JavaScript
-    React
-    HTTP Requests and Responses
-    Authentication
+* HTML
+* CSS
+* JavaScript
+* React
+* HTTP Requests and Responses
+* Authentication
 
-# Implemented Features:
+## Implemented Features:
 
 * Authentification with PKCE-Flow
 * browse Spotify-Data by Title, Author or both together
@@ -41,16 +41,16 @@ In this project, you will build a React web application called Jammming. You wil
 * notification when no results could be found
 * notification if there are no more items in the result-list
 
-# Future Work:
+## Future Work:
 
 * create the opportunity to add the filtered items to an allready existing list 
 * replace alert banner with modals
 * write tests!
 
-# How to use this app as a developer:
+## How to use this app as a developer:
 
 1. create a Spotify-Account
-2. go to [https://developer.spotify.com] and follow the instructions under **Getting started** to list your personal App
+2. go to [https://developer.spotify.com] and follow the instructions under <span style="color:green">**Getting started**</span> to list your personal App
 3. you will recieve a client-ID which is neccessary to run this App 
 4. rename the .env.example file to .env 
 5. In the .env file store your client-ID as the value of the provided variable 
