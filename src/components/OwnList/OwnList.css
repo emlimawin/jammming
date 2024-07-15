@@ -113,6 +113,14 @@
         height: 100%;
         overflow-y: scroll;
     }
+
+    .listsHeader {
+        height: 4em;
+    }
+
+    .listsHeaderClosed {
+        height: 4em;
+    }
     
     .caretDown {
         display: block;

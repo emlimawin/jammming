@@ -11,15 +11,15 @@ const ItemCard = ({track}) => {
             <table className="itemInfos">
                 <tbody>
                     <tr>
-                        <th className="categories">Title:</th>
+                        <th className="categories">Title </th>
                         <td className="categories-data" id="songTitle">{track.name}</td>
                     </tr>
                     <tr>
-                        <th className="categories">Author:</th>
+                        <th className="categories">Author </th>
                         <td className="categories-data" id="songAuthor">{track.artists[0].name}</td>
                     </tr>
                     <tr>
-                        <th className="categories">Album:</th>
+                        <th className="categories">Album </th>
                         <td className="categories-data" id="albumName">{track.album.name}</td>
                     </tr>
                 </tbody>
