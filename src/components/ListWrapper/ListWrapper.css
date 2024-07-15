@@ -17,6 +17,23 @@
     }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 720px) {
+    .listWrapper {
+        width: 80%;
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-self: center;
+        gap: 1.5em;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 720px) {
+    .listWrapper {
+        width: 90%;
+    }
+}
+
 /*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
 
 @media only screen and (orientation: portrait) and (min-width: 901px) {

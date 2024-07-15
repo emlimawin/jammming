@@ -57,6 +57,15 @@
     }
 }
 
+@media only screen and (orientation: landscape) and (max-width: 720px) {
+    .resultContainer {
+        min-height: 200px;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+}
+
 /*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
 
 @media only screen and (orientation: portrait) and (max-width: 900px) {
@@ -66,4 +75,10 @@
         width: 100%;
         overflow-y: scroll;
     }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 400px) {
+    .results {
+        padding-inline: 0;
+    }   
 }

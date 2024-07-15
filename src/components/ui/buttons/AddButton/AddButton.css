@@ -19,3 +19,23 @@
     font-size: 1.7em;
     transition: 0.2s ease-in-out;
 }
+
+/*RESPONSIVE-Portrait----------------------------------------------------------------------------------------------------------*/
+@media only screen and (orientation: portrait) and (max-width: 966px) {
+    .passItem {
+        padding-right: 1.5em;
+    }
+}
+
+@media only screen and (orientation: portrait) and (max-width: 400px) {
+    .passItem {
+        padding-right: 0.5em;
+    }
+
+    .passItem {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+        padding-top: 0.5em;
+    }
+}

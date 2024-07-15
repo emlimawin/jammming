@@ -54,6 +54,7 @@ In this project, you will build a React web application called Jammming. You wil
 2. go to [developer.spotify.com](https://developer.spotify.com) and follow the instructions under *Getting started* to list your personal App
 3. you will recieve a client-ID which is neccessary to run this App 
 4. rename the .env.example file to .env 
-5. In the .env file store your client-ID as the value of the provided variable 
+5. in the .env file store your client-ID as the value of the provided variable 
+6. store your redirect-URL (the same you listed for your App on the Spotify Developer Dashboard) as the value of provided variable
 
 Now you should be ready to go!
