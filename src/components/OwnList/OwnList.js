@@ -10,8 +10,7 @@ const OwnList = ({
     deleteTrack, 
     removeAll, 
     getNewListName, 
-    newListName, 
-    createPlaylist,
+    newListNameRef, 
 }) => {
     const [menuOpen, setMenueOpen] = useState(true);
 
@@ -21,22 +20,6 @@ const OwnList = ({
         } else {
             setMenueOpen(true);
         }
-    };
-
-    function createNewList() {   
-    if (ownList.length === 0) {
-        alert('Your list is empty');
-        return;
-    } else if (ownList.length > 0 && !newListName) {
-        alert('Please give your list a name');
-        return;
-    } else if (ownList.length > 0 && newListName) {
-                    const urisArray = [];
-                    const uris = ownList.map(el => el.uri).join(); // Get the URIs of the added songs and convert it to string. 
-                    urisArray.push(uris); //push uris-string to UrisArray to create an array, that will be accepted by createPlaylist URL parameter from App.js
-                    //console.log(urisArray);
-                    createPlaylist(urisArray);  
-    }    
     };
 
     return (
@@ -59,10 +42,9 @@ const OwnList = ({
                 </div>
                 <HandleNewList 
                     removeAll={removeAll} 
-                    getNewListName={getNewListName} 
-                    newListName={newListName} 
-                    createNewList={createNewList}
                     menuOpen={menuOpen}
+                    newListNameRef={newListNameRef}
+                    getNewListName={getNewListName}
                 />
              </div> 
         </div>

@@ -15,9 +15,8 @@ const Main = ({
     loaderRef,
     hasMore,
     firstFetch,
-    newListName, 
-    getNewListName, 
-    createPlaylist
+    userID,
+    accessToken,
 }) => {
     const [showBtn, setShowBtn] = useState("scrollBtnHidden");
     const [hasFired, setHasFired] = useState(false);
@@ -76,13 +75,12 @@ const Main = ({
             />
             <ListWrapper 
                 filteredData={filteredData}
-                createPlaylist={createPlaylist}
                 loaderRef={loaderRef}
                 firstFetch={firstFetch}
-                newListName={newListName}
-                getNewListName={getNewListName}
                 hasMore={hasMore}
                 loggedIn={loggedIn}
+                userID={userID}
+                accessToken={accessToken}
             />
             <button
                 onClick={scrollToTop}

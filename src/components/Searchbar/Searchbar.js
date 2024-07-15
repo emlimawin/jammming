@@ -17,7 +17,7 @@ const Searchbar = ({
             <div className="menuWrapper">
                 <div className="sowhatWrapper">
                     <h2 className="sowhat">Hey <br></br><span className="musicLover">{loggedIn ? username : salutation}</span></h2>
-                    <p>browse Spotify by title or artist. Then join your favorites into a new created list that you can add to your account:</p>
+                    <p>browse Spotify by title, artist or both. Then join your favorites into a new created list that you can add to your account:</p>
                 </div>
                 <SearchContainer 
                     handleSearch={handleSearch}

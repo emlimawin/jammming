@@ -5,11 +5,10 @@ import NewListName from "../ui/forms/NewListName/NewListName";
 import AddListButton from "../ui/buttons/AddListButton/AddListButton";
 
 const HandleNewList = ({
-    removeAll, 
+    removeAll,  
+    newListNameRef, 
     getNewListName, 
-    newListName, 
-    createNewList, 
-    menuOpen
+    menuOpen,
 }) => {
     return (
         <div className={menuOpen ? "handleList" : "handleListClosed"}>
@@ -17,13 +16,12 @@ const HandleNewList = ({
                 className="clearList"
                 removeAll={removeAll}
             />
-            <NewListName 
-                getNewListName={getNewListName} 
-                newListName={newListName}
+            <NewListName  
+                newListNameRef={newListNameRef}
             />
             <AddListButton 
                 className="AddNewList"
-                createNewList={createNewList}
+                getNewListName={getNewListName}
             />
         </div>
     );

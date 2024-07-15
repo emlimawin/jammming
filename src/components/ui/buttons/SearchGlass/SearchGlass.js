@@ -12,7 +12,8 @@ const SearchGlass = ({ handleSearch, loggedIn }) => {
         } else {
             handleSearch();
         }
-    }
+    };
+
     return (
         <button type="button" onClick={handleClick}>
             <FontAwesomeIcon icon={faMagnifyingGlass} className="searchIcon"/>

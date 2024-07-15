@@ -1,6 +1,6 @@
 # Jammming - an App for filtering Spotify, creating and adding new lists to own account
 
-This App was created within the scope of the codecademy-task *Create a Playlist App With the Spotify API*.
+This App was created within the scope of the codecademy-task *Create a Playlist App With the Spotify API*. It is build with Create-React-App, Javascript and the Fetch API. The main functionalities (HTTP Requests and Responses) can be found in App.js and ListWrapper.js. For the Authflow I use the provided [template from Spotify](https://github.com/spotify/web-api-examples/tree/master/authorization/authorization_code_pkce). You can find my implementation in the "auth" folder.
 
 ## Description/Purpose:
 
@@ -45,6 +45,7 @@ In this project, you will build a React web application called Jammming. You wil
 
 * create the opportunity to add the filtered items to an allready existing list 
 * replace alert banner with modals
+* implement refresh-token
 * write tests!
 
 ## How to use this app as a developer:
