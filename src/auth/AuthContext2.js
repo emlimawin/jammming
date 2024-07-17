@@ -7,7 +7,6 @@
  * https://developer.spotify.com/documentation/web-api/tutorials/code-pkce-flow
  */
 const clientId = process.env.REACT_APP_CLIENT_ID // your clientId
-
 const redirectUrl = process.env.REACT_APP_REDIRECT_URI; // your redirect URL - must be localhost URL and/or HTTPS
 
 const authorizationEndpoint = "https://accounts.spotify.com/authorize";
@@ -39,10 +38,13 @@ const code = args.get('code');
 
 export let loggedIn = false; /*---------------------------------------------------------my code */
 export let userToken = ""; /*-----------------------------------------------------------my code */
+export let user;  /*-------------------------------------------------------------------my code */
+export let userId;
 
 // If we find a code, we're in a callback, do a token exchange
 if (code) {
   const token = await getToken(code);
+  console.log("called getToken() line 47")/*----------------------------- */
   currentToken.save(token);
 //console.log(token)
   // Remove code from URL so we can refresh correctly.
@@ -51,24 +53,23 @@ if (code) {
 
   const updatedUrl = url.search ? url.href : url.href.replace('?', '');
   window.history.replaceState({}, document.title, updatedUrl);
-  loggedIn= true /*--------------------------------------------------------------------my code */
   userToken = token.access_token /*----------------------------------------------------my code */
 }
+console.log(currentToken.access_token)
 
-export let user;  /*-------------------------------------------------------------------my code */
-export let userId;
-
-// If we have a token, we're logged in, so fetch user data and render logged in template
-if (currentToken.access_token) {
+// If we have a token, we're logged in, so fetch user data and render loggedin template
+if (currentToken.access_token !== null) {
   const userData = await getUserData();
+  console.log('called getUserData() Line 62')/*----------------------------- */
+  console.log(userData)/*----------------------------- */
   user = await userData.display_name;
   userId = userData.id
+  loggedIn = true;
 };
 console.log(user);
 console.log(loggedIn);
 
 // Otherwise we're not logged in, so render the login template
-
 async function redirectToSpotifyAuthorize() {
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const randomValues = crypto.getRandomValues(new Uint8Array(64));
@@ -97,6 +98,7 @@ async function redirectToSpotifyAuthorize() {
 
   authUrl.search = new URLSearchParams(params).toString();
   window.location.href = authUrl.toString(); // Redirect the user to the authorization server for login
+  console.log('called redirectToSpotify()')/*----------------------------- */
 }
 
 // Soptify API Calls
@@ -116,7 +118,7 @@ async function getToken(code) {
       code_verifier: code_verifier,
     }),
   });
-
+  console.log('called getToken')/*----------------------------- */
   return await response.json();
 }
 
@@ -132,7 +134,7 @@ async function getToken(code) {
       refresh_token: currentToken.refresh_token
     }),
   });
-
+  console.log('called refreshToken()')/*----------------------------- */
   return await response.json();
 } 
 
@@ -141,7 +143,7 @@ async function getUserData() {
     method: 'GET',
     headers: { 'Authorization': 'Bearer ' + currentToken.access_token },
   });
-
+  console.log('called getUserData()')/*----------------------------- */
   return await response.json();
 }
 
@@ -152,6 +154,9 @@ export async function loginWithSpotifyClick() {
 
 export async function logoutClick() {
   localStorage.clear();
+  userToken = ""; /*-----------------------------------------------------------my code */
+  user = null;  /*--------------------------------------------------------------------my code */
+  userId = null;/*--------------------------------------------------------------------my code */
   window.location.href = redirectUrl;
 }
 
@@ -160,4 +165,8 @@ export async function refreshTokenClick() {
   currentToken.save(token);
 
 }
+
+window.addEventListener('beforeunload', () => {
+  loggedIn = true
+});
 

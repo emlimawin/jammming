@@ -21,7 +21,7 @@ import {
 const App = () => {
    
     //State-Variables used in App------------------------------------------------------------------------------------------------------------------
-    const accessToken = userToken;
+    const token = userToken;
     const username = user;
     const userID = userId;
     const [data, setData] = useState([]);
@@ -69,9 +69,9 @@ const App = () => {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
+            'Authorization': 'Bearer ' + token
         }
-    }), [accessToken]);
+    }), [token]);
 
     const getData = async () => {
         if (!loggedIn) return;// prevents data fetch before user is loggedin but clicks the buttons
@@ -165,7 +165,7 @@ const App = () => {
                     isLoading={isLoading}
                     firstFetch={firstFetch}
                     userID={userID}
-                    accessToken={accessToken}
+                    token={token}
                 />
                 <Footer />
             </div>
