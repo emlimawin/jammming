@@ -16,7 +16,7 @@ import {
     loggedIn, 
     userToken, 
     userId
-} from './auth/AuthContext2.js';
+} from './auth/AuthContext.js';
 
 const App = () => {
    
