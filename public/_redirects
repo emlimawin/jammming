@@ -1,1 +1,5 @@
+# Redirect all API requests to the Spotify API
+/api/* https://api.spotify.com/:splat 200
+
+# Redirect all other requests to index.html for handling client-side routing
 /* /index.html 200
