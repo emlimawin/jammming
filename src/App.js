@@ -12,18 +12,18 @@ import './assets/global.css';
 import {
     loginWithSpotifyClick, 
     logoutClick, 
-    user, 
-    loggedIn, 
-    userToken, 
-    userId
 } from './auth/AuthContext.js';
 
 const App = () => {
    
-    //State-Variables used in App------------------------------------------------------------------------------------------------------------------
-    const token = userToken;
-    const username = user;
-    const userID = userId;
+    //State-Variables------------------------------------------------------------------------------------------------------------------
+    const token = localStorage.getItem('currentToken.access_token');
+        console.log('token:' + token);
+    const username = localStorage.getItem('userData.display_name');
+        console.log('username:' + username)
+    const userID = localStorage.getItem('userData.id');
+        console.log('userID: ' + userID)
+    const [loggedIn, setLoggedIn] = useState(false);
     const [data, setData] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [choice, setChoice] = useState('All');
@@ -34,6 +34,20 @@ const App = () => {
     const inputRef = useRef();
     const loaderRef = useRef(null); //element used to check if User reached the end of Page...when last element in list becomes visible, the page nows that it has to load more Data
                                   //useRef does not rerender the page. it is here only helping to detect the changes
+
+    if (token !== null && username !== null) {
+        setLoggedIn(true);
+    } else {
+        setLoggedIn(false);
+    };
+
+    window.addEventListener('beforeunload', () => {
+        if (loggedIn) {
+            setLoggedIn(true);
+        } else {
+            setLoggedIn(false);
+        }
+      });
 
     // Gets the userInput and fires the getData function by onClick on SearchGlass.js
     const handleSearch = () => {
