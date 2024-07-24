@@ -43,52 +43,67 @@ export let userId;
 
 // If we find a code, we're in a callback, do a token exchange
 if (code) {
-  const token = await getToken(code);
-  console.log("called getToken() line 47")/*----------------------------- */
-  currentToken.save(token);
-//console.log(token)
+  try {
+    const token = await getToken(code);
+    console.log("called getToken() line 47")
+    console.log(token)
+    currentToken.save(token);
+    userToken = token.access_token 
+  } catch (error) {
+    console.log(error);
+  }
+  
+
+  if (currentToken.access_token !== null) {
+    try {
+      const userData = await getUserData();
+      console.log('called getUserData() Line 62')
+      console.log(userData)
+      user = await userData.display_name;
+      userId = userData.id
+      if (userData) {
+        loggedIn = true;
+      }
+    } catch (error) {
+      console.log(error);
+      localStorage.clear();
+      userToken = ""; 
+      user = null; 
+      userId = null;
+      window.location.href = redirectUrl;
+      alert('Something went wrong. Please try again.')
+    }
+  };
   // Remove code from URL so we can refresh correctly.
-  const url = new URL(window.location.href);
+  /* const url = new URL(window.location.href);
   url.searchParams.delete("code");
 
   const updatedUrl = url.search ? url.href : url.href.replace('?', '');
   window.history.replaceState({}, document.title, updatedUrl);
-  userToken = token.access_token /*----------------------------------------------------my code */
+   */ 
 }
-console.log(currentToken.access_token)
+//console.log(currentToken.access_token)
 
 // If we have a token, we're logged in, so fetch user data and render loggedin template
 
 /* if (currentToken.access_token !== null) {
-  const userData = await getUserData();
-  console.log('called getUserData() Line 62')
-  console.log(userData)
-  user = await userData.display_name;
-  userId = userData.id
-  loggedIn = true;
-};
-console.log(user);
-console.log(loggedIn); */
-
-if (currentToken.access_token !== null) {
   try {
     const userData = await getUserData();
-    console.log('called getUserData() Line 62')/*----------------------------- */
-    console.log(userData)/*----------------------------- */
+    console.log('called getUserData() Line 62')
+    console.log(userData)
     user = await userData.display_name;
     userId = userData.id
     loggedIn = true;
   } catch (error) {
     console.log(error);
     localStorage.clear();
-    userToken = ""; /*-----------------------------------------------------------my code */
-    user = null;  /*--------------------------------------------------------------------my code */
-    userId = null;/*--------------------------------------------------------------------my code */
+    userToken = ""; 
+    user = null; 
+    userId = null;
     window.location.href = redirectUrl;
     alert('Something went wrong. Please try again.')
   }
-
-};
+}; */
 console.log(user);
 console.log(loggedIn);
 
