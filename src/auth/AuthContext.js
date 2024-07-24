@@ -143,6 +143,8 @@ async function redirectToSpotifyAuthorize() {
 // Soptify API Calls
 async function getToken(code) {
   const code_verifier = localStorage.getItem('code_verifier');
+  console.log("code_verifier: ");
+  console.log(code_verifier);
 
   const response = await fetch(tokenEndpoint, {
     method: 'POST',
