@@ -46,25 +46,25 @@ const App = () => {
         console.log('localStorage:');
         console.log(localStorage);
         
-        if (access_token) {
-          setToken(access_token);
-        }
+        if (access_token === undefined || access_token === null) {
+          return;
+        } else {
+            setToken(access_token);
+            setLoggedIn(true);
+        };
     
         if (display_name === undefined || display_name === null) {
-            setUsername('musiclover');  
+            return;  
         } else {
             setUsername(display_name);
-        }
+        };
 
-        if (id) {
-            setUserID(id);
-        }
-
-        if(access_token === undefined || access_token === null) {
-            setLoggedIn(false);
+        if (id === undefined || id === null) {
+            return;
         } else {
-            setLoggedIn(true);
-        }
+            setUserID(id);
+        };
+
     }, []);
 
 
