@@ -17,11 +17,11 @@ import {
 const App = () => {
    
     //State-Variables------------------------------------------------------------------------------------------------------------------
-    const token = localStorage.getItem('currentToken.access_token');
+    const [token, setToken] = useState(null);
         console.log('token:' + token);
-    const username = localStorage.getItem('userData.display_name');
+    const [username, setUsername] = useState('musiclover'); 
         console.log('username:' + username)
-    const userID = localStorage.getItem('userData.id');
+    const [userID, setUserID] = useState(null); 
         console.log('userID: ' + userID)
     const [loggedIn, setLoggedIn] = useState(false);
     const [data, setData] = useState([]);
@@ -35,19 +35,38 @@ const App = () => {
     const loaderRef = useRef(null); //element used to check if User reached the end of Page...when last element in list becomes visible, the page nows that it has to load more Data
                                   //useRef does not rerender the page. it is here only helping to detect the changes
 
-    if (token !== null && username !== null) {
-        setLoggedIn(true);
-    } else {
-        setLoggedIn(false);
-    };
+    useEffect(() => {
+        const access_token = localStorage.getItem('access_token');
+        console.log('access_token: ' + access_token)
+        const display_name = localStorage.getItem('display_name');
+        console.log('display_name: ' + display_name)
+        const id = localStorage.getItem('id');
+        console.log(id)
 
-    window.addEventListener('beforeunload', () => {
-        if (loggedIn) {
-            setLoggedIn(true);
-        } else {
-            setLoggedIn(false);
+        console.log('localStorage:');
+        console.log(localStorage);
+        
+        if (access_token) {
+          setToken(access_token);
         }
-      });
+    
+        if (display_name === undefined || display_name === null) {
+            setUsername('musiclover');  
+        } else {
+            setUsername(display_name);
+        }
+
+        if (id) {
+            setUserID(id);
+        }
+
+        if(access_token === undefined || access_token === null) {
+            setLoggedIn(false);
+        } else {
+            setLoggedIn(true);
+        }
+    }, []);
+
 
     // Gets the userInput and fires the getData function by onClick on SearchGlass.js
     const handleSearch = () => {

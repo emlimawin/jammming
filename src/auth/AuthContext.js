@@ -12,6 +12,8 @@ export const currentToken = {
   get expires() { return localStorage.getItem('expires') || null },
 
   save: function (response) {
+    console.log("Saving token response:", response);
+
     const { access_token, refresh_token, expires_in } = response;
     localStorage.setItem('access_token', access_token);
     localStorage.setItem('refresh_token', refresh_token);
@@ -20,6 +22,11 @@ export const currentToken = {
     const now = new Date();
     const expiry = new Date(now.getTime() + (expires_in * 1000));
     localStorage.setItem('expires', expiry);
+
+    console.log("Saved access_token:", localStorage.getItem('access_token'));
+    console.log("Saved refresh_token:", localStorage.getItem('refresh_token'));
+    console.log("Saved expires_in:", localStorage.getItem('expires_in'));
+    console.log("Saved expires:", localStorage.getItem('expires'));
   }
 };
 
@@ -28,9 +35,14 @@ export const userData = {
   get id() { return localStorage.getItem('id') || null;},
 
   save: function (response) {
+    console.log("Saving user data response:", response);
+
     const {display_name, id} = response;
     localStorage.setItem('display_name', display_name);
     localStorage.setItem('id', id);
+
+    console.log("Saved display_name:", localStorage.getItem('display_name'));
+    console.log("Saved id:", localStorage.getItem('id'));
   }
 };
 
@@ -45,21 +57,26 @@ if (code) {
       console.log("called getToken() line 47")
       console.log(token)
     currentToken.save(token);
+    // Remove code from URL so we can refresh correctly.
+    const url = new URL(window.location.href);
+    url.searchParams.delete("code");
+    const updatedUrl = url.search ? url.href : url.href.replace('?', '');
+    window.history.replaceState({}, document.title, updatedUrl);
   } catch (error) {
     console.log(error);
   }
   // If we have a token, we're logged in, so fetch user data save to localstorage
   if (currentToken.access_token !== null) {
     try {
-      const userData = await getUserData();
+      const fetchedUserData = await getUserData();
         console.log('called getUserData() Line 62');
-        console.log(userData);
-      userData.save(userData);
+        console.log(fetchedUserData);
+      userData.save(fetchedUserData);
     } catch (error) {
       console.log(error);
-      localStorage.clear();
       window.location.href = redirectUrl;
-      alert('Something went wrong. Please try again.')
+      localStorage.clear();
+      alert('Something went wrong. Please try again.');
     }
   }
 };
