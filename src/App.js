@@ -124,11 +124,6 @@ const App = () => {
     useEffect(() => {
              getData(); 
     },[searchInput]);
-
-    console.log('data:' + data)
-    console.log('index: ' + index)
-    console.log('firstFetch: ' + firstFetch)
-    console.log('isLoading: ' + isLoading)
     
     //Load more Data on Scroll-----------------------------------------------------------------------------------------------------------------------
  
