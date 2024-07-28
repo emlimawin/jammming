@@ -18,11 +18,8 @@ const App = () => {
    
     //State-Variables------------------------------------------------------------------------------------------------------------------
     const [token, setToken] = useState(null);
-        console.log('token:' + token);
     const [username, setUsername] = useState('musiclover'); 
-        console.log('username:' + username)
     const [userID, setUserID] = useState(null); 
-        console.log('userID: ' + userID)
     const [loggedIn, setLoggedIn] = useState(false);
     const [data, setData] = useState([]);
     const [searchInput, setSearchInput] = useState('');
@@ -37,14 +34,8 @@ const App = () => {
 
     useEffect(() => {
         const access_token = localStorage.getItem('access_token');
-        console.log('access_token: ' + access_token)
         const display_name = localStorage.getItem('display_name');
-        console.log('display_name: ' + display_name)
         const id = localStorage.getItem('id');
-        console.log(id)
-
-        console.log('localStorage:');
-        console.log(localStorage);
         
         if (access_token === undefined || access_token === null) {
           return;
@@ -94,7 +85,6 @@ const App = () => {
         } else {
           return data;
         }
-        // eslint-disable-next-line 
       }, [choice, data]);
 
     //Get Data----------------------------------------------------------------------------------------------------------------------------------------
@@ -135,6 +125,11 @@ const App = () => {
              getData(); 
     },[searchInput]);
 
+    console.log('data:' + data)
+    console.log('index: ' + index)
+    console.log('firstFetch: ' + firstFetch)
+    console.log('isLoading: ' + isLoading)
+    
     //Load more Data on Scroll-----------------------------------------------------------------------------------------------------------------------
  
     const fetchMoreData = async () => {
